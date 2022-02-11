@@ -21,6 +21,7 @@ public class Guest {
      */
     public Guest drink( Beer beer ) throws DrunkenException {
         setFill(beer);
+
         if (this.capacity < this.fill) {
             throw new DrunkenException("Guest is drunk!");
         }

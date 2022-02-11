@@ -9,8 +9,8 @@ public class Beer {
 
     private double volume;
 
-    public Beer(double beerLeftValue) {
-        this.volume = beerLeftValue;
+    public Beer(double beer) {
+        this.volume = beer;
     }
 
     public double getVolume() {

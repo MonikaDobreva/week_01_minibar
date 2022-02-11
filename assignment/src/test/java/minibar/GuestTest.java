@@ -22,8 +22,10 @@ public class GuestTest {
 
     @Test
     public void drunkGuest() {
-        Beer beer = new Beer(10.0);
-        Guest guest = new Guest(5.0);
+        double beerV = 10.0;
+        double cap = 5.0;
+        Beer beer = new Beer(beerV);
+        Guest guest = new Guest(cap);
         ThrowingCallable code = () -> {
             guest.drink(beer);
         };
