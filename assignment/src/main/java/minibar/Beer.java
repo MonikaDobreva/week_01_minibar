@@ -7,6 +7,14 @@ package minibar;
  */
 public class Beer {
 
-    //TODO 4 implement beer
+    private double volume;
+
+    public Beer(double beerLeftValue) {
+        this.volume = beerLeftValue;
+    }
+
+    public double getVolume() {
+        return this.volume;
+    }
     
 }

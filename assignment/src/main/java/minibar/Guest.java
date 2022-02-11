@@ -8,7 +8,8 @@ package minibar;
  */
 public class Guest {
 
-    //TODO 2 implement Guest fields, getters and setters.
+    private double fill;
+    private double capacity;
     
     /**
      * *
@@ -19,8 +20,27 @@ public class Guest {
      * @throws DrunkenException when overfilled.
      */
     public Guest drink( Beer beer ) throws DrunkenException {
-        //TODO 3 implement Guest.drink
-        
+        setFill(beer);
+        if (this.capacity < this.fill) {
+            throw new DrunkenException("Guest is drunk!");
+        }
         return this;
+    }
+
+    public void setFill(Beer beer){
+        this.fill += beer.getVolume();
+    }
+
+    public double getFill(){
+        return this.fill;
+    }
+
+    public Guest(double capacity) {
+        this.capacity = capacity;
+        this.fill = 0;
+    }
+
+    public double getCapacity(){
+        return this.capacity;
     }
 }

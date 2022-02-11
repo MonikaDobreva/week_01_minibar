@@ -9,6 +9,25 @@ import org.junit.jupiter.api.Test;
  * @author Pieter van den Hombergh {@code p.vandehombergh@gmail.com}
  */
 public class GuestTest {
-    //TODO 5
+
+    @Test
+    public void soberGuest() {
+        double beerV = 10.0;
+        double cap = 15.0;
+        Beer beer = new Beer(beerV);
+        Guest guest = new Guest(cap);
+        guest.drink(beer);
+        assertThat(guest.getFill()).isEqualTo(beerV);
+    }
+
+    @Test
+    public void drunkGuest() {
+        Beer beer = new Beer(10.0);
+        Guest guest = new Guest(5.0);
+        ThrowingCallable code = () -> {
+            guest.drink(beer);
+        };
+        assertThatCode(code).isInstanceOf(DrunkenException.class);
+    }
     
 }

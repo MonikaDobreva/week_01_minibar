@@ -31,10 +31,12 @@ public class Stock {
      * @throws EmptyStockException when the stock has not enough volume for the
      * ordered beer.
      */
-    public Beer draw( double volume ) throws
-            EmptyStockException {
-        //TODO 1 implement  Stock.draw(Volume)
-        return null;
+    public Beer draw( double volume ) throws EmptyStockException{
+        if (this.fill-volume < volume) {
+        throw new EmptyStockException();
+    }
+        this.fill = this.fill - volume;
+        return new Beer(volume);
     }
 
     public double getLeft() {
